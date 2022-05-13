@@ -1,0 +1,16 @@
+name: interact with Github API
+on: 
+  pull_request:
+
+jobs:
+  run-npm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create issue
+        shell: bash
+        run: |
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/jcsimonnet/design-patterns/issues \
+          -d '{"title":"Found a bug","body":"I'm having a problem with this.","assignees":["jcsimonnet"]}'
