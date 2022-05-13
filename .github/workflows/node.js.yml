@@ -20,6 +20,7 @@ jobs:
 
 
   run-npm-test:
+    needs: run-npm-build
     runs-on: ubuntu-latest
     steps:
         - name: checkout
