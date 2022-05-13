@@ -6,4 +6,6 @@ on:
 jobs:
   call-workflow:
     uses: ./.github/workflows/ex4.yml
+    with:
+      NODE_VERSION: 14
   
