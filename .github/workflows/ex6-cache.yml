@@ -62,7 +62,7 @@ jobs:
               ${{ runner.os }}-
 
         - if: ${{ steps.cache-npm.outputs.cache-hit == false }}
-          name: List the state of node modules
+          name: Install if cache-hit false
           continue-on-error: true
           run: npm install
         - name : setup node
