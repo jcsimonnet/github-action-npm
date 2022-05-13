@@ -5,12 +5,18 @@ on:
 jobs:
   run-npm-test:
     runs-on: ubuntu-latest
+    
     steps:
+      # - name: store github-sha-7
+        # id: github-sha-7
+        # run: echo '::set-output name=MY_GITHUB_SHA_7::${GITHUB_SHA::7}'
+
       - name: create issue
+        id: post-issue
         shell: bash
         run: |
           curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/jcsimonnet/design-patterns/issues \
-          -d '{"title":"Found a bug","body":"I'm having a problem with this.","assignees":["jcsimonnet"]}'
+          -d '{"title":"Found a bug ${{env.GITHUB_SHA::7}}","body":"I'm having a problem with this.","assignees":["jcsimonnet"]}'
