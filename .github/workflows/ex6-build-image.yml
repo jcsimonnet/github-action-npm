@@ -1,4 +1,4 @@
-name: Build on pr And build main 
+name: Ex6 Build on pr And build main 
 on: 
   workflow_dispatch:
 
