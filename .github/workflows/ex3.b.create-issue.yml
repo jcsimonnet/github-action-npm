@@ -1,6 +1,6 @@
 name: interact with Github API
 on: 
-  pull_request:
+  # pull_request:
   workflow_dispatch:
 
 
